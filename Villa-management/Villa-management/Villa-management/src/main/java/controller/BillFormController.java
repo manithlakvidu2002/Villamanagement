@@ -332,7 +332,7 @@ public class BillFormController {
 
         try {
             //Catch The Report
-            JasperDesign load = JRXmlLoader.load(this.getClass().getResourceAsStream("/view/report/BillReport.jrxml"));
+            JasperDesign load = JRXmlLoader.load(this.getClass().getResourceAsStream("/report/BillReport.jrxml"));
 
             //Compile the Report
             JasperReport compileReport = JasperCompileManager.compileReport(load);
@@ -352,7 +352,7 @@ public class BillFormController {
     public void btnReportOnAction(ActionEvent actionEvent) {
 
         try {
-            JasperReport compileReport = (JasperReport) JRLoader.loadObject(Objects.requireNonNull(this.getClass().getResource("/view/report/FullBillReport.jasper")));
+            JasperReport compileReport = (JasperReport) JRLoader.loadObject(Objects.requireNonNull(this.getClass().getResource("/report/FullBillReport.jasper")));
             JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, null, getCon());
             JasperViewer.viewReport(jasperPrint, false);
 

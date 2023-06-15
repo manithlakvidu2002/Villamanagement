@@ -373,7 +373,7 @@ public class BookingRoomFormController {
 
         try {
             //Catch The Report
-            JasperDesign load = JRXmlLoader.load(this.getClass().getResourceAsStream("/view/report/BookingReport.jrxml"));
+            JasperDesign load = JRXmlLoader.load(this.getClass().getResourceAsStream("/report/BookingReport.jrxml"));
 
             //Compile the Report
             JasperReport compileReport = JasperCompileManager.compileReport(load);
